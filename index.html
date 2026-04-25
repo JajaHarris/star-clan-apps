@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Clan Apps LLC | Mobile & Web App Development</title>
+  <meta name="description" content="Star Clan Apps LLC designs, builds, and maintains mobile and web applications, offering custom software development services and proprietary software products." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
+                  radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.18), transparent 32%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .shell {
+      width: min(1080px, 100%);
+      background: rgba(15, 23, 42, 0.76);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.28);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    main {
+      padding: 64px 32px 36px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      max-width: 760px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      max-width: 700px;
+      margin: 28px 0 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 750;
+      border: 1px solid var(--border);
+    }
+
+    .button.primary {
+      color: #07111f;
+      background: linear-gradient(135deg, var(--accent), #7dd3fc);
+      border: 0;
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .feature-card h2 {
+      margin: 0 0 16px;
+      font-size: 1.15rem;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+    }
+
+    .feature-list span {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 54px;
+    }
+
+    .service {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .service h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      padding: 28px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    @media (max-width: 780px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 18px 0 0;
+      }
+
+      .hero,
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">SC</div>
+          <div>Star Clan Apps LLC</div>
+        </div>
+        <nav aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="mailto:hello@starclanapps.com">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="about">
+          <div>
+            <div class="eyebrow">Mobile & Web App Development</div>
+            <h1>Software built with clarity, craft, and purpose.</h1>
+            <p class="intro">
+              Star Clan Apps LLC designs, builds, and maintains mobile and web applications. We provide custom software development services for clients and create proprietary software products for modern users.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="mailto:hello@starclanapps.com">Start a conversation</a>
+              <a class="button secondary" href="#services">View services</a>
+            </div>
+          </div>
+
+          <aside class="feature-card" aria-label="Company highlights">
+            <h2>What we focus on</h2>
+            <ul class="feature-list">
+              <li><span>✦</span> Mobile app development for iOS and cross-platform products</li>
+              <li><span>✦</span> Web applications, internal tools, and business software</li>
+              <li><span>✦</span> Clean architecture, maintainability, and thoughtful user experience</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="services" id="services" aria-label="Services">
+          <div class="service">
+            <h3>Custom Development</h3>
+            <p>End-to-end design and development for mobile apps, web apps, and business software.</p>
+          </div>
+          <div class="service">
+            <h3>App Maintenance</h3>
+            <p>Ongoing improvements, bug fixes, modernization, platform updates, and feature delivery.</p>
+          </div>
+          <div class="service">
+            <h3>Product Development</h3>
+            <p>Proprietary software products built to solve practical problems with simple, useful design.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>© <span id="year"></span> Star Clan Apps LLC. All rights reserved.</div>
+        <div><a href="mailto:hello@starclanapps.com">hello@starclanapps.com</a></div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
